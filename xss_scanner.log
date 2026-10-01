@@ -1,0 +1,229 @@
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] === Simple XSS Scanner 診断セッション開始 ===
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] 対象URL: http://127.0.0.1:5000/search_vuln | メソッド: GET | パラメータ: keyword
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': 'NIT_Baseline_Check'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=28.77ms | Size=441 bytes
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<script>/*NIT_XSS_ynqnl9*/</script>'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=31.38ms | Size=458 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-01] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<h1>NIT_XSS_ynqnl9</h1>'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=29.66ms | Size=446 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-02] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '"><script>/*NIT_XSS_ynqnl9*/</script>'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=14.82ms | Size=460 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-03] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': "'><script>/*NIT_XSS_ynqnl9*/</script>"} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.63ms | Size=460 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-04] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '" onfocus="/*NIT_XSS_ynqnl9*/" autofocus="'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=26.68ms | Size=465 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-05] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': "' onfocus='/*NIT_XSS_ynqnl9*/' autofocus='"} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.49ms | Size=465 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-06] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<img src=x onerror="/*NIT_XSS_ynqnl9*/">'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.16ms | Size=463 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-07] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<svg onload="/*NIT_XSS_ynqnl9*/">'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=21.31ms | Size=456 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-08] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': "';/*NIT_XSS_ynqnl9*/;//"} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=14.47ms | Size=446 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-09] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<sCrIpt>/*NIT_XSS_ynqnl9*/</sCrIpT>'} | Data: None
+[2026-10-01 09:30:13] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=14.69ms | Size=458 bytes
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] [PAYLOAD-10] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:30:13] [INFO   ] [XSS_Scanner] スキャン完了。総テスト数: 10, CSV出力: C:\Users\fujir\Documents\NIT\test_report_vuln.csv
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] === Simple XSS Scanner 診断セッション開始 ===
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] 対象URL: http://127.0.0.1:5000/search_safe | メソッド: GET | パラメータ: keyword
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': 'NIT_Baseline_Check'} | Data: None
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=28.10ms | Size=443 bytes
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '<script>/*NIT_XSS_arws7c*/</script>'} | Data: None
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.68ms | Size=472 bytes
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] [PAYLOAD-01] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '<h1>NIT_XSS_arws7c</h1>'} | Data: None
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=3.80ms | Size=460 bytes
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] [PAYLOAD-02] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '"><script>/*NIT_XSS_arws7c*/</script>'} | Data: None
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=20.66ms | Size=482 bytes
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] [PAYLOAD-03] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': "'><script>/*NIT_XSS_arws7c*/</script>"} | Data: None
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.83ms | Size=482 bytes
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] [PAYLOAD-04] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '" onfocus="/*NIT_XSS_arws7c*/" autofocus="'} | Data: None
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.42ms | Size=487 bytes
+[2026-10-01 09:30:30] [INFO   ] [XSS_Scanner] [PAYLOAD-05] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:30] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': "' onfocus='/*NIT_XSS_arws7c*/' autofocus='"} | Data: None
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.44ms | Size=487 bytes
+[2026-10-01 09:30:31] [INFO   ] [XSS_Scanner] [PAYLOAD-06] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '<img src=x onerror="/*NIT_XSS_arws7c*/">'} | Data: None
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=3.82ms | Size=481 bytes
+[2026-10-01 09:30:31] [INFO   ] [XSS_Scanner] [PAYLOAD-07] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '<svg onload="/*NIT_XSS_arws7c*/">'} | Data: None
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.27ms | Size=474 bytes
+[2026-10-01 09:30:31] [INFO   ] [XSS_Scanner] [PAYLOAD-08] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': "';/*NIT_XSS_arws7c*/;//"} | Data: None
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=3.67ms | Size=453 bytes
+[2026-10-01 09:30:31] [INFO   ] [XSS_Scanner] [PAYLOAD-09] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_safe | Params: {'keyword': '<sCrIpt>/*NIT_XSS_arws7c*/</sCrIpT>'} | Data: None
+[2026-10-01 09:30:31] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=24.54ms | Size=472 bytes
+[2026-10-01 09:30:31] [INFO   ] [XSS_Scanner] [PAYLOAD-10] 【対策済み確認】 パラメータ: keyword -> 適切にエスケープ処理済
+[2026-10-01 09:30:31] [INFO   ] [XSS_Scanner] スキャン完了。総テスト数: 10, CSV出力: C:\Users\fujir\Documents\NIT\test_report_safe.csv
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] === Simple XSS Scanner 診断セッション開始 ===
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] 対象URL: http://127.0.0.1:5000/comment_vuln | メソッド: POST | パラメータ: comment
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': 'NIT_Baseline_Check'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=7.37ms | Size=630 bytes
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '<script>/*NIT_XSS_xm7cmo*/</script>'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=28.40ms | Size=647 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-01] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '<h1>NIT_XSS_xm7cmo</h1>'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.24ms | Size=635 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-02] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '"><script>/*NIT_XSS_xm7cmo*/</script>'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.52ms | Size=649 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-03] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': "'><script>/*NIT_XSS_xm7cmo*/</script>"}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=3.42ms | Size=649 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-04] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '" onfocus="/*NIT_XSS_xm7cmo*/" autofocus="'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=3.49ms | Size=654 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-05] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': "' onfocus='/*NIT_XSS_xm7cmo*/' autofocus='"}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=19.25ms | Size=654 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-06] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '<img src=x onerror="/*NIT_XSS_xm7cmo*/">'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=22.19ms | Size=652 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-07] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '<svg onload="/*NIT_XSS_xm7cmo*/">'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=25.70ms | Size=645 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-08] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': "';/*NIT_XSS_xm7cmo*/;//"}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.75ms | Size=635 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-09] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [POST] http://127.0.0.1:5000/comment_vuln | Params: None | Data: {'comment': '<sCrIpt>/*NIT_XSS_xm7cmo*/</sCrIpT>'}
+[2026-10-01 09:30:41] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=27.48ms | Size=647 bytes
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] [PAYLOAD-10] 【脆弱性検知】 パラメータ: comment -> 未エスケープ反射
+[2026-10-01 09:30:41] [INFO   ] [XSS_Scanner] スキャン完了。総テスト数: 10, CSV出力: C:\Users\fujir\Documents\NIT\xss_report_20261001_093041.csv
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] === Simple XSS Scanner 診断セッション開始 ===
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] 対象URL: http://127.0.0.1:5000/profile | メソッド: GET | パラメータ: bio
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': 'NIT_Baseline_Check'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=7.08ms | Size=186 bytes
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<script>/*NIT_XSS_gmpgm4*/</script>'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.17ms | Size=203 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-01] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<h1>NIT_XSS_gmpgm4</h1>'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=30.34ms | Size=191 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-02] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '"><script>/*NIT_XSS_gmpgm4*/</script>'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=55.43ms | Size=205 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-03] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': "'><script>/*NIT_XSS_gmpgm4*/</script>"} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=17.16ms | Size=205 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-04] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '" onfocus="/*NIT_XSS_gmpgm4*/" autofocus="'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=14.62ms | Size=210 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-05] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': "' onfocus='/*NIT_XSS_gmpgm4*/' autofocus='"} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=25.08ms | Size=210 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-06] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<img src=x onerror="/*NIT_XSS_gmpgm4*/">'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.16ms | Size=208 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-07] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<svg onload="/*NIT_XSS_gmpgm4*/">'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=17.50ms | Size=201 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-08] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': "';/*NIT_XSS_gmpgm4*/;//"} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.44ms | Size=191 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-09] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<sCrIpt>/*NIT_XSS_gmpgm4*/</sCrIpT>'} | Data: None
+[2026-10-01 09:30:54] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=16.33ms | Size=203 bytes
+[2026-10-01 09:30:54] [INFO   ] [XSS_Scanner] [PAYLOAD-10] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] === Simple XSS Scanner 診断セッション開始 ===
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] 対象URL: http://127.0.0.1:5000/profile | メソッド: GET | パラメータ: bio
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': 'NIT_Baseline_Check'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=7.63ms | Size=186 bytes
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<script>/*NIT_XSS_bbgcso*/</script>'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=28.78ms | Size=203 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-01] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<h1>NIT_XSS_bbgcso</h1>'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.09ms | Size=191 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-02] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '"><script>/*NIT_XSS_bbgcso*/</script>'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=24.76ms | Size=205 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-03] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': "'><script>/*NIT_XSS_bbgcso*/</script>"} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.45ms | Size=205 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-04] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '" onfocus="/*NIT_XSS_bbgcso*/" autofocus="'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.47ms | Size=210 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-05] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': "' onfocus='/*NIT_XSS_bbgcso*/' autofocus='"} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=20.28ms | Size=210 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-06] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<img src=x onerror="/*NIT_XSS_bbgcso*/">'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=15.04ms | Size=208 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-07] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<svg onload="/*NIT_XSS_bbgcso*/">'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.70ms | Size=201 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-08] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': "';/*NIT_XSS_bbgcso*/;//"} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=20.94ms | Size=191 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-09] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/profile | Params: {'bio': '<sCrIpt>/*NIT_XSS_bbgcso*/</sCrIpT>'} | Data: None
+[2026-10-01 09:31:26] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.29ms | Size=203 bytes
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] [PAYLOAD-10] 【脆弱性検知】 パラメータ: bio -> 未エスケープ反射
+[2026-10-01 09:31:26] [INFO   ] [XSS_Scanner] スキャン完了。総テスト数: 10, CSV出力: C:\Users\fujir\Documents\NIT\xss_report_20261001_093126.csv
+[2026-10-01 09:31:37] [INFO   ] [XSS_Scanner] === Simple XSS Scanner 診断セッション開始 ===
+[2026-10-01 09:31:37] [INFO   ] [XSS_Scanner] 対象URL: http://127.0.0.1:5000/search_vuln | メソッド: GET | パラメータ: keyword,category
+[2026-10-01 09:31:37] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': 'NIT_Baseline_Check'} | Data: None
+[2026-10-01 09:31:37] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=6.56ms | Size=441 bytes
+[2026-10-01 09:31:37] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<script>/*NIT_XSS_tokdph*/</script>'} | Data: None
+[2026-10-01 09:31:37] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=20.50ms | Size=458 bytes
+[2026-10-01 09:31:37] [INFO   ] [XSS_Scanner] [PAYLOAD-01] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:37] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<h1>NIT_XSS_tokdph</h1>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=30.60ms | Size=446 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-02] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '"><script>/*NIT_XSS_tokdph*/</script>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.57ms | Size=460 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-03] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': "'><script>/*NIT_XSS_tokdph*/</script>"} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=25.60ms | Size=460 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-04] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '" onfocus="/*NIT_XSS_tokdph*/" autofocus="'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=5.09ms | Size=465 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-05] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': "' onfocus='/*NIT_XSS_tokdph*/' autofocus='"} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=25.21ms | Size=465 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-06] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<img src=x onerror="/*NIT_XSS_tokdph*/">'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.10ms | Size=463 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-07] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<svg onload="/*NIT_XSS_tokdph*/">'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=26.16ms | Size=456 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-08] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': "';/*NIT_XSS_tokdph*/;//"} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=26.94ms | Size=446 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-09] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'keyword': '<sCrIpt>/*NIT_XSS_tokdph*/</sCrIpT>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=31.00ms | Size=458 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] [PAYLOAD-10] 【脆弱性検知】 パラメータ: keyword -> 未エスケープ反射
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '<script>/*NIT_XSS_lru2ld*/</script>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.28ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '<h1>NIT_XSS_lru2ld</h1>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=25.62ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '"><script>/*NIT_XSS_lru2ld*/</script>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=15.55ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': "'><script>/*NIT_XSS_lru2ld*/</script>"} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.92ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '" onfocus="/*NIT_XSS_lru2ld*/" autofocus="'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=3.93ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': "' onfocus='/*NIT_XSS_lru2ld*/' autofocus='"} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=21.95ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '<img src=x onerror="/*NIT_XSS_lru2ld*/">'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=15.94ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '<svg onload="/*NIT_XSS_lru2ld*/">'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=15.75ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': "';/*NIT_XSS_lru2ld*/;//"} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.30ms | Size=423 bytes
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP送信開始: [GET] http://127.0.0.1:5000/search_vuln | Params: {'category': '<sCrIpt>/*NIT_XSS_lru2ld*/</sCrIpT>'} | Data: None
+[2026-10-01 09:31:38] [DEBUG  ] [XSS_Scanner] HTTP受信完了: Status=200 | Time=4.17ms | Size=423 bytes
+[2026-10-01 09:31:38] [INFO   ] [XSS_Scanner] スキャン完了。総テスト数: 20, CSV出力: C:\Users\fujir\Documents\NIT\xss_report_20261001_093138.csv

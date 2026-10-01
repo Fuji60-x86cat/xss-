@@ -1,0 +1,3 @@
+"""
+XSS Scanner Modules Package
+"""

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS脆弱性診断・検証用ポータル</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        .card.vuln {
+            border-left: 5px solid #ef4444;
+        }
+        .card.safe {
+            border-left: 5px solid #22c55e;
+        }
+        .card.auth {
+            border-left: 5px solid #f59e0b;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .tag.vuln { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .tag.safe { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .tag.auth { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #f1f5f9;
+        }
+        p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        form {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 8px 12px;
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #fff;
+        }
+        button {
+            padding: 8px 16px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        button:hover {
+            background: #0369a1;
+        }
+        .code-box {
+            background: #090d16;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #38bdf8;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Simple XSS Scanner 検証用テストポータル</h1>
+            <p class="subtitle">メディアデザインプロジェクトⅣ / 担当A作成 検証用Mockエンドポイント一覧</p>
+        </header>
+
+        <div class="grid">
+            <!-- 1. GET 脆弱検索フォーム -->
+            <div class="card vuln">
+                <span class="tag vuln">脆弱 (VULNERABLE)</span>
+                <h2>1. GET 検索フォーム (本文反射)</h2>
+                <p>入力されたキーワードがHTMLエスケープされずにそのまま本文中に出力されます。</p>
+                <form action="/search_vuln" method="GET" target="_blank">
+                    <input type="text" name="keyword" value="NIT_Test_Keyword">
+                    <button type="submit">テスト送信</button>
+                </form>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/search_vuln --param keyword</div>
+            </div>
+
+            <!-- 2. GET 対策済検索フォーム -->
+            <div class="card safe">
+                <span class="tag safe">対策済 (SANITIZED)</span>
+                <h2>2. GET 検索フォーム (対策済)</h2>
+                <p><code>html.escape()</code> により特殊文字がエンティティ変換され無害化されています。</p>
+                <form action="/search_safe" method="GET" target="_blank">
+                    <input type="text" name="keyword" value="NIT_Test_Keyword">
+                    <button type="submit">テスト送信</button>
+                </form>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/search_safe --param keyword</div>
+            </div>
+
+            <!-- 3. GET 属性値脆弱フォーム -->
+            <div class="card vuln">
+                <span class="tag vuln">脆弱 (VULNERABLE)</span>
+                <h2>3. GET 属性値コンテキスト (value="...")</h2>
+                <p>ダブルクォートのエスケープが不完全で、属性値からのタグ抜け出しが可能です。</p>
+                <form action="/attr_vuln" method="GET" target="_blank">
+                    <input type="text" name="q" value="Search_Value">
+                    <button type="submit">テスト送信</button>
+                </form>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/attr_vuln --param q</div>
+            </div>
+
+            <!-- 4. GET 属性値対策済フォーム -->
+            <div class="card safe">
+                <span class="tag safe">対策済 (SANITIZED)</span>
+                <h2>4. GET 属性値コンテキスト (対策済)</h2>
+                <p>クォートを含む完全なエスケープ <code>quote=True</code> が適用されています。</p>
+                <form action="/attr_safe" method="GET" target="_blank">
+                    <input type="text" name="q" value="Search_Value">
+                    <button type="submit">テスト送信</button>
+                </form>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/attr_safe --param q</div>
+            </div>
+
+            <!-- 5. POST コメント脆弱フォーム -->
+            <div class="card vuln">
+                <span class="tag vuln">脆弱 (POST VULNERABLE)</span>
+                <h2>5. POST コメント投稿 (脆弱)</h2>
+                <p>POSTメソッドで送信されたコメント本文が生のままHTML出力されます。</p>
+                <form action="/comment_vuln" method="POST" target="_blank">
+                    <input type="text" name="comment" value="Hello World">
+                    <button type="submit">投稿送信</button>
+                </form>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/comment_vuln --param comment --method POST</div>
+            </div>
+
+            <!-- 6. POST コメント対策済フォーム -->
+            <div class="card safe">
+                <span class="tag safe">対策済 (POST SANITIZED)</span>
+                <h2>6. POST コメント投稿 (対策済)</h2>
+                <p>POSTデータがサーバー側でエスケープ処理されて安全に出力されます。</p>
+                <form action="/comment_safe" method="POST" target="_blank">
+                    <input type="text" name="comment" value="Hello World">
+                    <button type="submit">投稿送信</button>
+                </form>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/comment_safe --param comment --method POST</div>
+            </div>
+
+            <!-- 7. Cookie 認証付きフォーム -->
+            <div class="card auth">
+                <span class="tag auth">認証付き (SESSION TEST)</span>
+                <h2>7. Cookie認証付きエンドポイント</h2>
+                <p>Cookieに <code>session_id=secret_session_token_123</code> が存在する場合のみ応答します。</p>
+                <div class="code-box">python xss_scanner.py --url http://127.0.0.1:5000/profile --param bio --cookie "session_id=secret_session_token_123"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
